@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "noEmit": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "types": ["react", "react-dom"],
+    "paths": { "@/*": ["./src/*"] },
+    // "paths": { "/src/*": ["./src/*"] },
+    // "paths": { "/src/*": ["../*"] },
+  },
+  "include": ["src"]
+}
