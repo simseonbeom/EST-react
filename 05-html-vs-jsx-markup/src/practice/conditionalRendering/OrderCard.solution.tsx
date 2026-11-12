@@ -5,6 +5,16 @@ interface Props {
   order: Order;
 }
 
+const statusLabels = {
+  pending: '결제 대기',
+  shipping: '배송 중',
+  delivered: '배송 완료',
+  canceled: '주문 취소',
+} satisfies Record<Order['status'], string>;
+
+// statusLabels[status]
+
+
 function OrderCardSolution({ order }: Props): JSX.Element {
   const { id, productName, price, status, isMember, couponCount, requestMessage } = order;
 

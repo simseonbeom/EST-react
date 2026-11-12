@@ -1,6 +1,5 @@
-
-import React, {createElement as h } from 'https://esm.sh/react';
-import ReactDOM,{createRoot} from 'https://esm.sh/react-dom/client';
+import React from "/src/lib/react.js";
+import ReactDOM from "/src/lib/react-dom.js";
 
 
 function Avatar({ name, status = "offline", size = 64 }) {

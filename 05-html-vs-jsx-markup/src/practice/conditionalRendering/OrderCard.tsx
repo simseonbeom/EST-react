@@ -1,25 +1,10 @@
-/**
- * 🧪 실습: 조건부 렌더링으로 주문 상태 카드 만들기
- *
- * 실행 방법
- *   src/main.tsx 에서 <Learn /> 대신 <Practice /> 를 렌더링하세요.
- *     import Practice from './practice'
- *
- * 규칙
- *   - 화면에는 data.ts 의 주문 4건(결제 대기 / 배송 중 / 배송 완료 / 취소)이 카드로 표시됩니다.
- *     한 컴포넌트가 order 값에 따라 다르게 보이도록 만드는 것이 목표입니다.
- *   - 아래 TODO 를 순서대로 해결하세요. 정답은 OrderCard.solution.tsx 에 있습니다.
- *   - 처음에는 "사용하지 않는 변수" 에러(빨간 밑줄)가 보입니다. 조건부 렌더링을 모두 적용하면 사라져요.
- *     다 풀고 나서 npx tsc -b --noEmit 이 통과하는지 확인하세요.
- */
-import type { JSX } from 'react';
+
+
 import type { Order } from './data';
 
-interface Props {
-  order: Order;
-}
 
-function OrderCard({ order }: Props): JSX.Element {
+
+function OrderCard(){
   const { id, productName, price, status, isMember, couponCount, requestMessage } = order;
 
   // TODO 1. if 문 + 조기 반환(early return)

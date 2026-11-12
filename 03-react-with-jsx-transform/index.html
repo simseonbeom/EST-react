@@ -9,7 +9,14 @@
   <!-- <script src="https://unpkg.com/@babel/standalone@7.26.0/babel.min.js"></script> -->
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <!-- <script type="module" src="src/main.js"></script> -->
-  <!-- <script type="text/jsx" data-type="module" src="src/main.babel.js"></script> -->
+     <script type="importmap">
+    {
+      "imports": {
+        "react/jsx-runtime": "https://esm.sh/react/jsx-runtime"
+      }
+    }
+  </script>
+  <script type="text/babel" data-type="module" data-presets="react" src="src/main.babel.js"></script>
   <script type="module" src="main.js"></script>
 
 </head>

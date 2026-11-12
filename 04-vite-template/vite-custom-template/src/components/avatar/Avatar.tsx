@@ -29,6 +29,8 @@ export function Avatar({ name, status = "offline", size = 64 }:AvatarProps) {
       break;
   }
 
+  // import.meta
+
   
   const label = `${name} (${statusMessage})`;
 

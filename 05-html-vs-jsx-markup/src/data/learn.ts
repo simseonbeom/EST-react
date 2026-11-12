@@ -43,3 +43,5 @@ export const statusMessagesWithID: StatusMessageObject[] = [
 
 
 
+
+export const emptyStatusMessages: StatusMessageObject[] = [];
