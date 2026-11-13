@@ -5,6 +5,7 @@ function multiply(n: number): number {
 }
 
 
+
 console.log(multiply(3)); // 6
 
 multiplier = 3;
