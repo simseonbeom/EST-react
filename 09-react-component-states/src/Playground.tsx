@@ -1,11 +1,15 @@
 import UserPage from "@/pages/users/UserPage"
+import NoteApp from "@/NoteApp/App"
 
 
 
 function Playground() {
   return (
     <div style={styles}>
-      <UserPage />
+      {/* <UserPage /> */}
+      <NoteApp></NoteApp>
+      
+      
     </div>
   )
 }

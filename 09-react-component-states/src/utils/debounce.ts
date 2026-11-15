@@ -62,7 +62,7 @@ export type FetchDataResult = ReturnType<typeof api.fetchData>;
 export function getUser() {
   return {
     id: 1,
-    name: '태민',
+    name: '선범',
     age: 20
   };
 }

@@ -1,3 +1,4 @@
+import { debounce } from "@/utils/debounce";
 import { useId } from "react";
 
 
@@ -8,7 +9,16 @@ import { useId } from "react";
 
 */
 
-function UserSearchBox({onSearch, searchTerm}) {
+
+interface Props { 
+  onSearch: (userInput:string) => void;
+  onReset: () => void;
+  searchTerm:string;
+  isInstantSearch?:boolean
+}
+
+
+function UserSearchBox({onSearch, searchTerm, onReset}:Props) {
   
   const id = useId();
 
@@ -32,6 +42,8 @@ function UserSearchBox({onSearch, searchTerm}) {
     
   }
   
+  const handleChange = debounce((e:React.ChangeEvent<HTMLInputElement>)=> onSearch(e.target.value),500)
+  // const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => onSearch(e.target.value);
 
   return (
     <form className="UserSearchBox" onSubmit={handleSearch}>
@@ -42,10 +54,11 @@ function UserSearchBox({onSearch, searchTerm}) {
           type="search" 
           placeholder="사용자 정보 입력"
           defaultValue={searchTerm}
+          onChange={handleChange}
         />
       </div>
       <button type="submit">찾기</button>
-      <button type="reset">목록 초기화</button>
+      <button type="reset" onClick={onReset}>목록 초기화</button>
     </form>
   );
 }
