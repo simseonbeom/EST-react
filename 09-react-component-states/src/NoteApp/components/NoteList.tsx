@@ -1,7 +1,7 @@
 import { convertSlug } from "@/utils/convertSlug"
 import type { Note } from "../api/getNote"
 import { ROUTES } from "../routes";
-
+import './NoteList.css'
 
 
 interface Props {

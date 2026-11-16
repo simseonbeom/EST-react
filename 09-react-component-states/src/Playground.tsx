@@ -1,5 +1,6 @@
 import UserPage from "@/pages/users/UserPage"
 import NoteApp from "@/NoteApp/App"
+import ProductPage from "@/pages/products/ProductPage"
 
 
 
@@ -7,6 +8,7 @@ function Playground() {
   return (
     <div style={styles}>
       {/* <UserPage /> */}
+      {/* <ProductPage /> */}
       <NoteApp></NoteApp>
       
       

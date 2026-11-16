@@ -1,3 +1,4 @@
+import { convertSlug } from '@/utils/convertSlug';
 import type { Note } from '../api/getNote';
 import BackLink from '../components/BackLink';
 import PrintError from '../components/PrintError';
@@ -23,6 +24,12 @@ function NoteDetailPage({ noteId, note, onChangeRoute }: Props) {
     return { __html: note.content };
   };
 
+  const handleChangeRoute = (e:React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    onChangeRoute(ROUTES.edit,noteId)
+  }
+
+
   return (
     <div className="NoteDetailPage">
       <BackLink onClick={handleBackToList} />
@@ -30,7 +37,10 @@ function NoteDetailPage({ noteId, note, onChangeRoute }: Props) {
       {note && (
         <>
           <h2>{note.title}</h2>
-          <span>{note.expand?.user.name}</span>
+          <span>
+            {note.expand?.user.name} {' '}
+            <a href={`#/edit/${convertSlug(note.title)}`} onClick={handleChangeRoute}>수정</a>
+          </span> 
           <div dangerouslySetInnerHTML={createMarkup()} />
         </>
       )}

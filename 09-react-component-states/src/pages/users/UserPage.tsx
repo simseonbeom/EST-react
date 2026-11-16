@@ -8,7 +8,7 @@ import UserListCount from "./components/UserListCount";
 import InstantSearch from "./components/InstantSearch";
 
 
-/* UserList, UserDetail, UserSearchBox, UserList, UserListCount, InstantSearch */
+/* UserList, UserItem, UserSearchBox, UserList, UserListCount, InstantSearch */
 
 
 
@@ -47,7 +47,7 @@ function UserPage() {
     <div className="UserPage">
       <InstantSearch isInstantSearch={isInstantSearch} onToggle={handleToggleInstantSearch} />
 
-      <UserSearchBox onSearch={handleSearch} searchTerm={searchTerm} onReset={handleReset}/>
+      <UserSearchBox onSearch={handleSearch} searchTerm={searchTerm} onReset={handleReset} isInstantSearch={isInstantSearch}/>
 
       <UserList users={searchedUsersList}></UserList>
 

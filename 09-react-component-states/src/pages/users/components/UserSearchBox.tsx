@@ -18,7 +18,7 @@ interface Props {
 }
 
 
-function UserSearchBox({onSearch, searchTerm, onReset}:Props) {
+function UserSearchBox({onSearch, searchTerm, onReset, isInstantSearch}:Props) {
   
   const id = useId();
 
@@ -41,7 +41,8 @@ function UserSearchBox({onSearch, searchTerm, onReset}:Props) {
     
     
   }
-  
+
+  // instant Search에 필요한 핸들러 함수 
   const handleChange = debounce((e:React.ChangeEvent<HTMLInputElement>)=> onSearch(e.target.value),500)
   // const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => onSearch(e.target.value);
 
@@ -54,7 +55,7 @@ function UserSearchBox({onSearch, searchTerm, onReset}:Props) {
           type="search" 
           placeholder="사용자 정보 입력"
           defaultValue={searchTerm}
-          onChange={handleChange}
+          onChange={isInstantSearch ? handleChange : undefined}
         />
       </div>
       <button type="submit">찾기</button>
