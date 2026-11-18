@@ -1,8 +1,6 @@
-import UserPage from "@/pages/users/UserPage"
-import NoteApp from "@/NoteApp/App"
-import ProductPage from "@/pages/products/ProductPage"
-
-
+import NoteApp from "@/NoteApp/App";
+// import UserPage from "@/pages/users/UserPage"
+// import ProductPage from "@/pages/products/ProductPage"
 
 function Playground() {
   return (
@@ -10,16 +8,13 @@ function Playground() {
       {/* <UserPage /> */}
       {/* <ProductPage /> */}
       <NoteApp></NoteApp>
-      
-      
     </div>
-  )
+  );
 }
-export default Playground
+export default Playground;
 
-
-const styles:React.CSSProperties = {
-  display: 'flex',
-  flexDirection: 'column',
+const styles: React.CSSProperties = {
+  display: "flex",
+  flexDirection: "column",
   gap: 20,
 };
