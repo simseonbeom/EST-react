@@ -12,8 +12,8 @@ function Playground() {
       <hr />
       {/* <Form></Form> */}
       {/* <Parent></Parent> */}
-      {/* <App /> */}
-      <Form></Form>
+      <App />
+      {/* <Form></Form> */}
     </>
   )
 }
