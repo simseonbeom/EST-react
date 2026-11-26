@@ -1,0 +1,47 @@
+/* 
+var(--color-accent)는 런타임에 브라우저가 해석함 그래서 .module.css 어디서든 바로 동작합니다.
+
+반면 @apply text-accent는 빌드 타임(PostCSS 단계)에서 
+해당 파일에 보이는 테마 정의(@theme)를 기반으로 유틸리티를 전개함
+
+지금 .module.css 파일은 자신의 파일 안에 @theme가 없고, 
+전역 파일에만 정의되어 있어서 Tailwind가 이 파일을 처리할 때 text-accent가 무엇인지 모름..
+
+방법 1. 파일 모듈 상단에 css 불러오기 
+@import "tailwindcss/theme.css" layer(theme);
+@import "@/styles/_theme.css";   
+
+
+방법 2. 변수만 직접 추출해서 작성
+
+border-radius: var(--spacing-sm);
+color: var(--color-accent);
+
+*/
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "@/styles/_theme.css";   
+
+.component {
+  @apply inline-flex items-center border rounded-sm border-solid border-accent;
+}
+
+.component .output {
+  @apply select-none text-sm font-light text-center text-accent;
+  inline-size: 2rem;
+}
+
+.component .group {
+  @apply inline-flex items-center;
+  flex-flow: column;
+}
+
+.component .button {
+  @apply select-none text-[#999] text-xs bg-transparent opacity-75 p-0 border-0;
+  block-size: 14px;
+  inline-size: 14px;
+}
+
+.component .button:hover:not(:disabled) {
+  @apply opacity-100 bg-[#ededed] text-accent;
+}
